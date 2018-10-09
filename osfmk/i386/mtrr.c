@@ -714,7 +714,7 @@ pat_init(void)
 		mtrr_update_action(CACHE_CONTROL_PAT);
 	}
     } else {
-        if ((pat = PATENTRY(0, PAT_WB) | PATENTRY(1, PAT_WC) |
+        if ((pat != PATENTRY(0, PAT_WB) | PATENTRY(1, PAT_WC) |
             PATENTRY(2, PAT_UCMINUS) | PATENTRY(3, PAT_UC) |
             PATENTRY(4, PAT_WB) | PATENTRY(5, PAT_WC) |
             PATENTRY(6, PAT_UCMINUS) | PATENTRY(7, PAT_UC))) {
