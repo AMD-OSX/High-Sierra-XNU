@@ -104,7 +104,6 @@ endif
 WARNFLAGS_STD := \
 	-Weverything \
 	-Wno-pedantic \
-	$(WERROR) \
 	-Wno-assign-enum \
 	-Wno-bad-function-cast \
 	-Wno-c++98-compat \
