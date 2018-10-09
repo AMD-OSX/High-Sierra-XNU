@@ -1283,7 +1283,7 @@ panic_display_system_configuration(boolean_t launchd_exit) {
 #if CONFIG_ZLEAKS
 			panic_display_ztrace();
 #endif /* CONFIG_ZLEAKS */
-			kext_dump_panic_lists(&paniclog_append_noflush);
+//            kext_dump_panic_lists(&paniclog_append_noflush);
 		}
 	}
 }
@@ -1379,7 +1379,8 @@ panic_display_ztrace(void)
 				paniclog_append_noflush("\n");
 			}
 			/* Print any kexts in that backtrace, along with their link addresses so we can properly blame them */
-			kmod_panic_dump((vm_offset_t *)&top_ztrace_copy.zt_stack[0], top_ztrace_copy.zt_depth);
+			/* Remove printing all kexts loaded on panic */
+            //kmod_panic_dump((vm_offset_t *)&top_ztrace_copy.zt_stack[0], top_ztrace_copy.zt_depth);
 		}
 		else {
 			paniclog_append_noflush("\nCan't access top_ztrace...\n");
