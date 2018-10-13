@@ -463,6 +463,9 @@ extern i386_vmm_info_t	*cpuid_vmm_info(void);
 extern uint32_t		cpuid_vmm_family(void);
 #endif
 
+extern boolean_t	IsAmdCPU(void);
+extern boolean_t	IsIntelCPU(void);
+
 #ifdef __cplusplus
 }
 #endif
